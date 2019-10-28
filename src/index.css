@@ -1,13 +1,205 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  background-color: hsl(180, 1%, 24%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: hsl(180, 1%, 46%); */
+  width: 85vw;
+  height: 90vh;
+  padding: 10px;
+}
+
+.form {
+  margin: 0 10px 0 0;
+  width: 60%;
+  height: 100%;
+  background-color: #e0e6d5;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form .decorate {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 5px 0;
+  /* background-color: red; */
+}
+
+.form .decorate button {
+  width: 10%;
+  height: 100%;
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: #5b5c5c;
+  cursor: pointer;
+  margin-right: 10px;
+  text-transform: capitalize;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5 ease;
+}
+.form .decorate button:hover,
+.form .decorate button:focus {
+  background-color: #d6a870;
+}
+.form .decorate button:active {
+  transform: scale(0.98);
+}
+
+.form .decorate button:nth-child(1) {
+  font-weight: bold;
+}
+.form .decorate button:nth-child(2) {
+  font-style: italic;
+}
+.form .decorate button:nth-child(3) {
+  text-decoration: underline;
+}
+
+.form input,
+.form textarea {
+  margin: 5px 0;
+  display: inline-block;
+  padding: 5px;
+  outline: none;
+}
+.form input:focus,
+.form textarea:focus {
+  outline: 1px solid #9cac9b;
+}
+.form input {
+  width: 100%;
+  height: 30px;
+  font-size: 1.04rem;
+  font-weight: bold;
+}
+.form input::first-letter {
+  text-transform: uppercase;
+}
+.form textarea {
+  width: 100%;
+  height: 525px;
+  font-size: 1.08rem;
+  resize: none;
+}
+.form .submit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+.form .submit button {
+  height: 100%;
+  border: none;
+  padding: 5px 10px;
+  color: #e0e6d5;
+  background-color: #5b5c5c;
+  cursor: pointer;
+  margin-left: 10px;
+  text-transform: capitalize;
+  outline: none;
+  transition: all 0.5 ease;
+}
+.form .submit button:hover,
+.form .submit button:focus {
+  background-color: #9cac9b;
+  color: #000;
+}
+.form .submit button:active {
+  transform: scale(0.98);
+}
+
+/* NOTELIST COMPONENT */
+.notelist {
+  width: 40%;
+  height: 100%;
+  background-color: #e0e6d5;
+  padding: 5px;
+  margin: 0 0 0 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.notes-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.note {
+  margin: 5px;
+  padding: 8px;
+  height: 100px;
+}
+.note {
+  background-color: #d6a870;
+}
+.note:nth-child(2n) {
+  background-color: #9cac9b;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-family: "Playfair Display", serif;
+}
+
+.notelist::-webkit-scrollbar {
+  width: 10px;
+}
+.notelist::-webkit-scrollbar-track {
+  background: #e0e6d5;
+}
+
+.notelist::-webkit-scrollbar-thumb {
+  background: #5b5c5c75;
+  border-radius: 10px;
+}
+
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 900px) {
+  .note {
+    margin: 5px;
+    padding: 8px;
+    height: 130px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .note {
+    margin: 5px;
+    padding: 8px;
+    height: 170px;
+  }
 }
